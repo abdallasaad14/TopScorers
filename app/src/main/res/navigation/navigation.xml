@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/countriesFragment">
+
+    <fragment
+        android:id="@+id/countriesFragment"
+        android:name="com.example.topscorers.screens.countries.CountriesFragment"
+        android:label="fragment_countries"
+        tools:layout="@layout/fragment_countries" >
+        <action
+            android:id="@+id/action_countriesFragment_to_competitionsFragment"
+            app:destination="@id/competitionsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/competitionsFragment"
+        android:name="com.example.topscorers.screens.competitions.CompetitionsFragment"
+        android:label="fragment_competitions"
+        tools:layout="@layout/fragment_competitions" >
+        <argument
+            android:name="countryId"
+            app:argType="string" />
+        <action
+            android:id="@+id/action_competitionsFragment_to_topScorersFragment"
+            app:destination="@id/topScorersFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/topScorersFragment"
+        android:name="com.example.topscorers.screens.topScorers.TopScorersFragment"
+        android:label="fragment_top_scorers"
+        tools:layout="@layout/fragment_top_scorers" >
+        <argument
+            android:name="leagueId"
+            app:argType="string" />
+    </fragment>
+</navigation>
